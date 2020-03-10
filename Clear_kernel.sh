@@ -77,7 +77,7 @@ function Askuser() {
   rpm -qa | grep kernel
   Logprefix;echo ${CMSG}'[Info]按下回车键开始卸载，或使用CTRL+C退出'${CEND}
   read
-  yum -y remove kernel-*
+  yum -y remove kernel-* --skip-broken
   Logprefix;echo ${CMSG}'[Info]卸载成功,按下回车安装kernel-devel、kernel-headers,或使用CTRL+C退出'${CEND}
   read
   yum -y install kernel-ml-devel kernel-ml-headers
